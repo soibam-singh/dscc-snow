@@ -1,0 +1,28 @@
+name: TEST env - Pushing modified codes into a Feature branch
+on:
+  #workflow_dispatch:
+  push:
+    branches:
+      - 'Feature_**'
+    paths-ignore:
+      - '**/.github/workflows/**'
+jobs:  
+  second-job:
+     runs-on:
+       - ubuntu-latest
+     steps:
+       - name: Print Message
+         run: echo "This is the second job."
+                 # You can add more steps here to perform actual tasks and produce an output
+       - name: Generate Output
+         id: generate_output
+         run: echo "::set-output name=my_output::1000"
+
+  third-job:
+    runs-on: DPP
+    needs: second-job
+    steps:
+      - name: Print Message
+        run: echo "This is the third job, and it depends on the output of the second job."
+      - name: Use Second Job Output
+        run: echo "The output of the second job was ${{ needs.second-job.outputs.my_output }}"

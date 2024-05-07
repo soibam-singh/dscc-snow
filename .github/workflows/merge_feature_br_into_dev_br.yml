@@ -1,7 +1,7 @@
-name: DEV env - Merging a Feature branch to Development branch
+name: DEV env - Merging a Feature branch to a Development branch
 on:
   #workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - Development
     paths-ignore:

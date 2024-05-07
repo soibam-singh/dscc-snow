@@ -1,11 +1,13 @@
 name: DEV env - Merging a Feature branch to a Development branch
 on:
   #workflow_dispatch:
-  pull_request:
+  pull_request_target:
     branches:
       - Development
-    paths-ignore:
-      - '**/.github/workflows/**'
+    types:
+      - closed
+    #paths-ignore:
+    #  - '**/.github/workflows/**'
 jobs:  
   second-job:
      if: github.event.pull_request.merged == true  # Only run if pull request is merged

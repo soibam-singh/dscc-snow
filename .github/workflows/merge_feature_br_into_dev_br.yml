@@ -1,4 +1,4 @@
-name: TEST env - Pushing modified codes into a Feature branch
+name: DEV env - Merging a Feature branch to Development branch
 on:
   #workflow_dispatch:
   push:

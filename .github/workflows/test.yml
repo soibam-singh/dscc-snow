@@ -25,7 +25,7 @@ jobs:
             echo $AWR_PATH
             echo ${{ env.AWR_PATH }}
             #$fileNameWithoutExtension = "awrmerge_10g"
-            #echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
+            echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
             #$remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
             #echo $remoteFilePath
 

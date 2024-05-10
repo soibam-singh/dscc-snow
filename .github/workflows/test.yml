@@ -9,7 +9,7 @@ on:
 jobs:  
   second-job:
      env:
-       AWR_PATH: C:\CICD\
+       AWR_PATH: "C:\CICD\"
      runs-on:
        - ubuntu-latest
      steps:

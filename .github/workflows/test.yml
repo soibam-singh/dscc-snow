@@ -25,7 +25,8 @@ jobs:
             echo $BUILD_DIR
             echo ${{ env.BUILD_DIR }}
             $fileNameWithoutExtension = "awrmerge_10g"
-            $remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
+            echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
+            #$remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
             echo $remoteFilePath
 
   third-job:

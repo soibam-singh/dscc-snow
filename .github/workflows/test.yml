@@ -21,7 +21,11 @@ jobs:
          run: echo "::set-output name=my_output::1000"
 
        - name: Print the environment variable
-         run: echo $AWR_PATH
+         run: |
+            echo $AWR_PATH
+            $fileNameWithoutExtension = "awrmerge_10g"
+            $remoteFilePath   = $AWR_PATH + $fileNameWithoutExtension + ".pyc"
+            echo $remoteFilePath
 
   third-job:
     runs-on: ubuntu-latest

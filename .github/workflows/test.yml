@@ -24,10 +24,11 @@ jobs:
          run: |
             echo $AWR_PATH
             echo ${{ env.AWR_PATH }}
+            $correctedPath = $AWR_PATH.Replace("\", "/")
             #$fileNameWithoutExtension = "awrmerge_10g"
-            echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
+            #echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
             #$remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
-            #echo $remoteFilePath
+            echo $correctedPath
 
   third-job:
     runs-on: ubuntu-latest

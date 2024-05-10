@@ -8,8 +8,8 @@ on:
       - '**/.github/workflows/**'
 jobs:  
   second-job:
-     env:       
-       BUILD_DIR: C:\CICD\
+     env:    
+       AWR_PATH: "C:/CICD/"
      runs-on:
        - ubuntu-latest
      steps:
@@ -22,9 +22,10 @@ jobs:
 
        - name: Print the environment variable
          run: |
-            echo $AWR_PATH
+            echo $BUILD_DIR
+            echo ${{ env.BUILD_DIR }}
             $fileNameWithoutExtension = "awrmerge_10g"
-            $remoteFilePath   = "${{ env.AWR_PATH }}/$fileNameWithoutExtension/.pyc"
+            $remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
             echo $remoteFilePath
 
   third-job:

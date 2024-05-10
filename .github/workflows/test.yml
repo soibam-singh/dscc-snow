@@ -22,12 +22,12 @@ jobs:
 
        - name: Print the environment variable
          run: |
-            echo $BUILD_DIR
-            echo ${{ env.BUILD_DIR }}
-            $fileNameWithoutExtension = "awrmerge_10g"
-            echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
+            echo $AWR_PATH
+            echo ${{ env.AWR_PATH }}
+            #$fileNameWithoutExtension = "awrmerge_10g"
+            #echo "remoteFilePath=$(echo ${env.AWR_PATH} | sed 's/\/cygwin\/c\//C:\\/')" >> $GITHUB_ENV
             #$remoteFilePath   = "${{ env.AWR_PATH }}" + $fileNameWithoutExtension + ".pyc"
-            echo $remoteFilePath
+            #echo $remoteFilePath
 
   third-job:
     runs-on: ubuntu-latest

@@ -24,7 +24,7 @@ jobs:
          run: |
             echo $AWR_PATH
             $fileNameWithoutExtension = "awrmerge_10g"
-            $remoteFilePath   = $AWR_PATH + $fileNameWithoutExtension + ".pyc"
+            $remoteFilePath   = ${{ env.AWR_PATH }} + $fileNameWithoutExtension + ".pyc"
             echo $remoteFilePath
 
   third-job:
